@@ -36,8 +36,7 @@ function loadDoc(url, myfunction) {
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState === 4 && this.status === 200) {
-			document.getElementById("testing").innerHTML = this.responseText;
-			//myfunction(this);
+			myfunction(this);
 		}
 	};
 	xhttp.open("GET",url,true);
