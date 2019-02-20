@@ -53,12 +53,14 @@ function displayfunction(xhttp) {
 	document.getElementById("testing").innerHTML = xhttp.responseText;
 }
 
+
+//Checks whether visitor name is in a file
 function checkImportant(xhttp) {
 	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
 	let array = newtext.split("\n");
 	
 	let visitor = getCookie("visitor");
-	document.getElementById("testing").innerHTML=xhttp.responseText;
+	document.getElementById("p1").innerHTML=visitor;
 	
 	let important = false;
 	for (i of array) {
@@ -70,9 +72,8 @@ function checkImportant(xhttp) {
 			important = false;
 		}
 	}
+	document.getElementById("p2").innerHTML=important;
 }
-	
-//let important_obj = loadDoc('important.txt', checkImportant);
 
 
 
