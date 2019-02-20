@@ -44,7 +44,18 @@ function loadDoc(url, myfunction) {
 }
 
 function myfunction(xhttp) {
-	document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
+	//* document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
+	//* document.getElementById("testing").innerHTML.toString.split("\n");
+
+	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
+	let array = newtext.split("\n");
+	for (
+		for (i in array) {
+			console.log(array[i])
+		}
+	)
+	
+	//*let newtext = document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
 }
 
 function createArray(url) {
