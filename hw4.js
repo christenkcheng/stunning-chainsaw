@@ -43,8 +43,7 @@ function loadDoc(url, myfunction) {
 	xhttp.send();
 }
 
-/*
 function myfunction(xhttp) {
 	document.getElementById("testing").innerHTML = xhttp.responseText;
 }
-*/
+
