@@ -1,26 +1,9 @@
-/*
-function make_cookie() {
-	let cookie_name = "name=" + name + ";"
-	
-	let now = new Date(), expires = now;
-	expires.setMinutes(expires.getMinutes()+1);
-	let cookie_expires = "expires=" + expires.toUTCString() + ";";
-
-	let cookie_path = "path=/;";
-
-	document.cookie = cookie_name + cookie_expires + cookie_path;
-
-	let x = document.cookie;
-	alert(x);
-}
-*/
-
 function checkCookie() {
 	let visitor = getCookie("visitor");
 	if (visitor != "") {
 		alert("Welcome again " + visitor);
 	} else {
-		cookie_name = prompt("What's your name?","");
+		visitor = prompt("What's your name?","");
 		setCookie("visitor",visitor, 5);
 		alert("Welcome " + visitor);
 	}
