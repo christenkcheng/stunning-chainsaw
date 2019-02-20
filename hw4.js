@@ -44,7 +44,7 @@ function loadDoc(url, myfunction) {
 }
 
 function myfunction(xhttp) {
-	document.getElementById("testing").innerHTML = xhttp.responseText;
+	document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
 }
 
 function createArray(url) {
