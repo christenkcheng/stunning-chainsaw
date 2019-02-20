@@ -47,3 +47,10 @@ function myfunction(xhttp) {
 	document.getElementById("testing").innerHTML = xhttp.responseText;
 }
 
+function createArray(url) {
+	let fs = require('fs');
+	let array = fs.readFileSync(url).toString.split("\n");
+	for (i in array) {
+		console.log(array[i]);
+	}
+}
