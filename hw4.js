@@ -22,6 +22,7 @@ function checkCookie() {
 	} else {
 		cookie_name = prompt("What's your name?","");
 		setCookie("visitor",visitor, 5);
+		alert("Welcome " + visitor);
 	}
 }
 
