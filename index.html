@@ -11,7 +11,15 @@
 	<main>
 		<h1>A Greeting Page for Important People</h1>
 		
-		<input type="button" onclick="checkCookie();" value="check cookie" />
+		<h2>Check cookie</h2>
+			<section>
+				<input type="button" onclick="checkCookie();" value="check cookie" />
+			</section>
+		
+		<h2>Check AJAX</h2>
+			<section id="testing">
+				<input type="button" onclick="loadDoc('important.txt', myfunction)" value="Try AJAX" />
+			</section>
 	</main>
 </body>
 
