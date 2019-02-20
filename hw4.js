@@ -1,5 +1,3 @@
-let name = prompt("What's your name?","");
-
 /*
 function make_cookie() {
 	let cookie_name = "name=" + name + ";"
