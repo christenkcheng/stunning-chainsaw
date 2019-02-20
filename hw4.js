@@ -32,6 +32,7 @@ function getCookie(cookie_name) {
 	return "";
 }
 
+//Loads file using AJAX then performs somefunction on that file
 function loadDoc(url, somefunction) {
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -44,14 +45,12 @@ function loadDoc(url, somefunction) {
 }
 
 
-function myfunction(xhttp) {
+//Displays the content in file
+function displayfunction(xhttp) {
 	//* document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
 	//* document.getElementById("testing").innerHTML.toString.split("\n");
 
-	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
-	let array = newtext.split("\n");
-
-	document.getElementById("testing").innerHTML = newtext;
+	document.getElementById("testing").innerHTML = xhttp.responseText;
 }
 
 function checkImportant(xhttp) {
@@ -73,7 +72,7 @@ function checkImportant(xhttp) {
 	}
 }
 	
-let important_obj = loadDoc('important.txt', checkImportant);
+//let important_obj = loadDoc('important.txt', checkImportant);
 
 
 
