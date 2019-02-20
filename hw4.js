@@ -32,16 +32,17 @@ function getCookie(cookie_name) {
 	return "";
 }
 
-function loadDoc(url, myfunction) {
+function loadDoc(url, somefunction) {
 	let xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState === 4 && this.status === 200) {
-			myfunction(this);
+			somefunction(this);
 		}
 	};
 	xhttp.open("GET",url,true);
 	xhttp.send();
 }
+
 
 function myfunction(xhttp) {
 	//* document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
@@ -49,13 +50,17 @@ function myfunction(xhttp) {
 
 	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
 	let array = newtext.split("\n");
+
+	document.getElementById("testing").innerHTML = newtext;
 }
 
-function checkImportant() {
+function checkImportant(xhttp) {
 	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
 	let array = newtext.split("\n");
 	
 	let visitor = getCookie("visitor");
+	document.getElementById("testing").innerHTML=xhttp.responseText;
+	
 	let important = false;
 	for (i of array) {
 		if (visitor===array[i]) {
@@ -68,3 +73,21 @@ function checkImportant() {
 	}
 }
 	
+let important_obj = loadDoc('important.txt', checkImportant);
+
+
+
+
+/*
+function createForm() {
+	for (let i=0; i<51; i++) {
+		let new_label = document.createElement("label");
+		label.setAttribute("for",i);
+
+		let new_button = document.createElement("input");
+		label.setAttribute("type","radio");
+		label.setAttribute("id",i);
+		label.setAttribute("name","speed_buttons");
+}
+}
+*/
