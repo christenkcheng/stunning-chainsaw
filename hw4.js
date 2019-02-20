@@ -60,8 +60,8 @@ function displayfunction(xhttp) {
 }
 
 
-//Checks whether visitor name is in a file
-let important = false;
+/Checks whether visitor name is in a file
+//let important = false;
 function checkImportant(xhttp) {
 	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
 	let array = newtext.split("\n");
@@ -69,6 +69,7 @@ function checkImportant(xhttp) {
 	let visitor = getCookie("visitor");
 	document.getElementById("p1").innerHTML=visitor;
 	
+	let important = false;
 	for (i of array) {
 		if (visitor===array[i]) {
 			important = true;
