@@ -49,19 +49,22 @@ function myfunction(xhttp) {
 
 	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
 	let array = newtext.split("\n");
-	for (
-		for (i in array) {
-			console.log(array[i])
-		}
-	)
-	
-	//*let newtext = document.getElementById("testing").innerHTML = xhttp.responseText.replace(/\\n/mg,"\n")
 }
 
-function createArray(url) {
-	let fs = require('fs');
-	let array = fs.readFileSync(url).toString.split("\n");
-	for (i in array) {
-		return array[i];
+function checkImportant() {
+	let newtext = xhttp.responseText.replace(/\\n/mg,"\n")
+	let array = newtext.split("\n");
+	
+	let visitor = getCookie("visitor");
+	let important = false;
+	for (i of array) {
+		if (visitor===array[i]) {
+			important = true;
+			break;
+		}
+		else {
+			important = false;
+		}
 	}
 }
+	
