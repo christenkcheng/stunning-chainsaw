@@ -32,6 +32,12 @@ function getCookie(cookie_name) {
 	return "";
 }
 
+function clearCookie(cookie_name) {
+	let p = new Date(1);
+	p = p.toUTCString();
+	document.cookie = "name=; expires=" + past + "; path=/;";
+}
+
 //Loads file using AJAX then performs somefunction on that file
 function loadDoc(url, somefunction) {
 	let xhttp = new XMLHttpRequest();
